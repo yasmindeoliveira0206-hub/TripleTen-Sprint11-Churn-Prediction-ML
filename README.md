@@ -1,38 +1,194 @@
-# TripleTen Sprint 11: Machine Learning para Retenção de Clientes (Previsão de Churn) 🤖🏋️‍♀️
+# Customer Churn Prediction with Machine Learning
 
-Este repositório contém o projeto final da décima primeira sprint do curso de Análise de Dados da TripleTen. O foco deste projeto foi a aplicação de algoritmos de **Machine Learning** para resolver um problema crítico de negócios: prever e reduzir o cancelamento de matrículas (Churn) em uma rede de academias chamada Model Fitness.
+## Overview
 
-## 📋 Contexto do Negócio
-A Model Fitness identificou que a perda de clientes (churn) é um dos maiores desafios para a lucratividade. O objetivo deste projeto foi analisar perfis de clientes, construir um modelo preditivo para identificar a probabilidade de cancelamento no próximo mês e agrupar os clientes em clusters para criar estratégias de retenção direcionadas.
+This project was developed as part of the TripleTen Data Analytics Program and focuses on predicting customer churn for a fitness center chain.
 
-## 🛠️ Tecnologias e Ferramentas
-*   **Python 3.x**
-*   **Scikit-Learn:** Criação, treinamento e avaliação de modelos de Machine Learning (Regressão Logística, Random Forest e K-Means).
-*   **SciPy:** Criação de dendrogramas para clustering hierárquico.
-*   **Pandas & NumPy:** Limpeza, pré-processamento e padronização de dados.
-*   **Seaborn & Matplotlib:** Visualização de distribuições, matrizes de correlação e perfis de clusters.
-
-## 🚀 Desafios Técnicos Superados
-Este projeto marcou a transição da análise descritiva para a análise preditiva:
-*   **Pré-processamento para ML:**
-    *   Padronização de variáveis contínuas usando `StandardScaler` para garantir que os algoritmos de distância funcionassem corretamente.
-    *   Análise de correlação para evitar multicolinearidade (identificando que "mês de contrato" e "meses restantes" eram altamente correlacionados).
-*   **Modelagem Preditiva (Classificação):**
-    *   Treinamento e comparação de dois algoritmos: **Regressão Logística** e **Random Forest Classifier**.
-    *   Avaliação de desempenho usando métricas de negócio: **Acurácia, Precisão e Recall**.
-    *   Conclusão de que a Regressão Logística teve um desempenho ligeiramente superior nos dados padronizados.
-*   **Clusterização (Aprendizado Não Supervisionado):**
-    *   Construção de um dendrograma para estimar o número ideal de clusters (5).
-    *   Aplicação do algoritmo **K-Means** para segmentar a base de clientes em grupos com comportamentos distintos.
-
-## 📊 Principais Insights
-*   **Previsão de Churn:** Clientes com contratos curtos (1 mês), que não participam de aulas em grupo e que moram longe da academia têm a maior probabilidade de cancelar.
-*   **Segmentação:** Foram identificados 5 perfis claros de clientes. O Cluster 0 (clientes fiéis de longo prazo) tem uma taxa de churn de apenas 2.7%, enquanto o Cluster 3 (clientes de curto prazo sem engajamento) tem uma taxa alarmante de 51%.
-*   **Estratégia de Negócio:** Recomendações focadas em incentivar planos de longo prazo, promover aulas em grupo nos primeiros meses e focar o marketing em residentes próximos às unidades.
-
-## 📁 Estrutura do Repositório
-*   `notebook.ipynb`: O notebook Jupyter contendo a Análise Exploratória (EDA), treinamento dos modelos de classificação e a clusterização.
-*   `README.md`: Este arquivo com a apresentação do projeto.
+Using machine learning techniques, the objective was to identify customers with a high probability of cancellation and provide actionable insights to support retention strategies.
 
 ---
-*Este projeto faz parte da minha formação como Analista de Dados na TripleTen Brasil.*
+
+## Business Context
+
+Customer retention is one of the main drivers of profitability in subscription-based businesses. Acquiring new customers is often more expensive than retaining existing ones.
+
+The challenge was to analyze customer behavior, predict churn risk for the following month, and segment customers into meaningful groups to support targeted retention initiatives.
+
+---
+
+## Objectives
+
+* Identify key factors associated with customer churn.
+* Build predictive models capable of estimating cancellation probability.
+* Segment customers according to behavioral patterns.
+* Generate business recommendations to improve retention rates.
+
+---
+
+## Technologies & Tools
+
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* SciPy
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
+
+---
+
+## Technical Challenges Overcome
+
+### Data Preparation
+
+* Data cleaning and preprocessing.
+* Feature scaling using StandardScaler.
+* Correlation analysis to identify multicollinearity.
+
+### Predictive Modeling
+
+* Development and comparison of:
+
+  * Logistic Regression
+  * Random Forest Classifier
+
+* Performance evaluation using:
+
+  * Accuracy
+  * Precision
+  * Recall
+
+### Customer Segmentation
+
+* Hierarchical clustering with dendrogram analysis.
+* Customer segmentation using K-Means clustering.
+* Identification of five distinct customer profiles.
+
+---
+
+## Key Insights
+
+* Customers with short-term contracts showed the highest churn risk.
+* Participation in group classes was strongly associated with customer retention.
+* Customers living farther from the gym demonstrated higher cancellation rates.
+* Five distinct customer segments were identified, each requiring different retention strategies.
+
+---
+
+## Business Recommendations
+
+* Promote long-term membership plans.
+* Encourage participation in group activities during the first months.
+* Develop targeted retention campaigns for high-risk customers.
+* Prioritize marketing efforts in areas closer to fitness center locations.
+
+---
+
+## Repository Structure
+
+```text
+├── notebook.ipynb
+├── README.md
+└── dataset/
+```
+
+---
+
+# Previsão de Churn de Clientes com Machine Learning
+
+## Visão Geral
+
+Este projeto foi desenvolvido durante a formação em Análise de Dados da TripleTen e tem como objetivo prever o cancelamento de clientes (churn) em uma rede de academias.
+
+Utilizando técnicas de Machine Learning, o projeto busca identificar clientes com maior probabilidade de cancelamento e gerar insights que apoiem estratégias de retenção e tomada de decisão baseada em dados.
+
+---
+
+## Contexto de Negócio
+
+A retenção de clientes é um dos principais fatores para a sustentabilidade e lucratividade de empresas que operam por meio de assinaturas ou mensalidades.
+
+Nesse cenário, a rede de academias Model Fitness enfrentava desafios relacionados ao cancelamento de matrículas e precisava entender quais fatores influenciavam a evasão de clientes para atuar preventivamente.
+
+---
+
+## Objetivos
+
+* Identificar os principais fatores relacionados ao churn.
+* Construir modelos preditivos para estimar a probabilidade de cancelamento.
+* Segmentar clientes de acordo com seus comportamentos e características.
+* Gerar recomendações estratégicas para aumentar a retenção de clientes.
+
+---
+
+## Tecnologias e Ferramentas
+
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* SciPy
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
+
+---
+
+## Desafios Técnicos Superados
+
+### Preparação dos Dados
+
+* Limpeza e tratamento dos dados.
+* Padronização de variáveis utilizando StandardScaler.
+* Análise de correlação para identificação de multicolinearidade.
+
+### Modelagem Preditiva
+
+Desenvolvimento e comparação dos modelos:
+
+* Regressão Logística
+* Random Forest Classifier
+
+Avaliação utilizando métricas de desempenho:
+
+* Acurácia
+* Precisão
+* Recall
+
+### Segmentação de Clientes
+
+* Construção de dendrogramas para análise hierárquica.
+* Aplicação do algoritmo K-Means.
+* Identificação de cinco perfis distintos de clientes.
+
+---
+
+## Principais Insights
+
+* Clientes com contratos de curto prazo apresentaram maior probabilidade de cancelamento.
+* A participação em aulas coletivas demonstrou forte relação com a retenção.
+* Clientes que residem mais distantes da academia tendem a cancelar com maior frequência.
+* Foram identificados cinco grupos distintos de clientes, cada um com necessidades e comportamentos específicos.
+
+---
+
+## Recomendações de Negócio
+
+* Incentivar a contratação de planos de longo prazo.
+* Promover o engajamento em aulas coletivas durante os primeiros meses.
+* Desenvolver campanhas de retenção direcionadas para clientes com alto risco de churn.
+* Concentrar esforços de marketing em regiões próximas às unidades da academia.
+
+---
+
+## Estrutura do Repositório
+
+```text
+├── notebook.ipynb
+├── README.md
+└── dataset/
+```
+
+---
+
